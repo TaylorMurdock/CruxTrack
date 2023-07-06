@@ -14,7 +14,7 @@
 CruxTrack is a web application designed to help rock climbers track and manage their climbing routes. With CruxTrack, climbers can create an account, log their climbing routes, and keep a record of their progress and achievements. The app provides a simple and intuitive interface for climbers to manage their routes effectively.
 
 ## Mock UP of UI
-- ![Wire Frame](img/../imgs/cruxTrackerWireFrame.png)
+  ![Wire Frame](img/../imgs/cruxTrackerWireFrame.png)
   [**LINK TO DESKTOP VIEW**](https://app.uizard.io/prototypes/K7zbRm9YrrU5X8yRLJG0/player/fullscreen)
   
 
