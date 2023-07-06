@@ -15,15 +15,15 @@ CruxTrack is a web application designed to help rock climbers track and manage t
 
 ## Mock UP of UI
 
-- ![Desktop View](http://imgur.com)
+- ![Desktop View](Screen Shot 2023-07-06 at 12.20.17 AM.png)
 - ![Mobile View](http://imgur.com)
 
 ## List of Backend Endpoints
 
-| ENDPOINT | METHOD | PURPOSE       |
-| -------- | ------ | ------------- |
-| /dog     | get    | list all dogs |
-| /dog/:id | get    | list one dog  |
+| ENDPOINT    | METHOD | PURPOSE         |
+| ----------- | ------ | --------------- |
+| /routes     | get    | list all routes |
+| /routes/:id | get    | list one route  |
 
 ## ERD (ENTITY RELATIONSHIP DIAGRAM)
 
