@@ -32,6 +32,14 @@ CruxTrack is a web application designed to help rock climbers track and manage t
 
 ## ERD (ENTITY RELATIONSHIP DIAGRAM)
 
-![PICTURE OF ERD](http://imgur.com)
++-------------+        +-------------+
+|   Climber   |        |    Route    |
++-------------+        +-------------+
+| id          |        | id          |
+| name        |        | name        |
+| email       |        | difficulty  |
++-------------+        | type        |
+                        +-------------+
+
 
 - [Free ERD Diagram Tool](https://dbdiagram.io/home)
