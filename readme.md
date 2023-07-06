@@ -21,10 +21,14 @@ CruxTrack is a web application designed to help rock climbers track and manage t
 
 ## List of Backend Endpoints
 
-| ENDPOINT    | METHOD | PURPOSE         |
-| ----------- | ------ | --------------- |
-| /routes     | get    | list all routes |
-| /routes/:id | get    | list one route  |
+| ENDPOINT            | METHOD | PURPOSE                |
+| ------------------- | ------ | ---------------------- |
+| /cruxtrack          | get    | Login Page             |
+| /cruxtrack/register | get    | Register Page          |
+| /cruxtrack/myroutes | get    | List of Routes         |
+| /cruxtrack/route    | get    | Specific Route Details |
+| /cruxtrack/newroute | get    | Add New Route To List  |
+
 
 ## ERD (ENTITY RELATIONSHIP DIAGRAM)
 
