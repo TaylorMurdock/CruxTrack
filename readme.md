@@ -15,7 +15,7 @@ CruxTrack is a web application designed to help rock climbers track and manage t
 
 ## Mock UP of UI
 
-- ![Desktop View](https://app.uizard.io/prototypes/K7zbRm9YrrU5X8yRLJG0/player/fullscreen)
+- [**LINK TO DESKTOP VIEW**](https://app.uizard.io/prototypes/K7zbRm9YrrU5X8yRLJG0/player/fullscreen)
 - ![Mobile View](http://imgur.com)
 
 ## List of Backend Endpoints
