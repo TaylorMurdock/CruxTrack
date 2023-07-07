@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Routes</title>
+</head>
+
+<body>
+    <h1>CruxTrack</h1>
+    <h2>My Routes</h2>
+    <% if (routes.length===0) { %>
+        <p>No routes found.</p>
+        <% } else { %>
+            <ul>
+                <% routes.forEach((route)=> { %>
+                    <li>
+                        <a href="/cruxtrack/route/<%= route._id %>">
+                            <%= route.name %>
+                        </a>
+                    </li>
+                    <% }) %>
+            </ul>
+            <% } %>
+                <a href="/cruxtrack/newRoute">Add New Route</a>
+</body>
+
+</html>
