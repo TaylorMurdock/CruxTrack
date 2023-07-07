@@ -5,40 +5,17 @@ const User = require("../models/user");
 
 // GET /users/register - User Registration Page
 router.get("/register", (req, res) => {
-  res.render("register", { error: null }); // Pass error as a property with a default value of null
+  res.render("register", { error: null });
 });
 
 // POST /users/register - User Registration
 router.post("/register", async (req, res) => {
-  try {
-    const { username, password } = req.body;
-
-    // Check if username already exists
-    const existingUser = await User.findOne({ username });
-    if (existingUser) {
-      return res.render("register", { error: "Username already exists" });
-    }
-
-    // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Create a new user
-    const newUser = new User({
-      username,
-      password: hashedPassword,
-    });
-    await newUser.save();
-
-    res.redirect("/users/login");
-  } catch (error) {
-    console.error("Error registering user:", error);
-    res.status(500).send("Internal Server Error");
-  }
+  // ...existing code
 });
 
 // GET /users/login - User Login Page
 router.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", { error: null });
 });
 
 // POST /users/login - User Login
