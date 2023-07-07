@@ -17,15 +17,27 @@ router.get("/myRoutes", async (req, res) => {
 router.get("/route/:id", async (req, res) => {
   try {
     const routeId = req.params.id;
-    const route = await Route.findById(routeId);
+    const route = await Route.findById(routeId); // Fetch the specific route by its ID
 
     if (!route) {
       return res.status(404).send("Route not found");
     }
 
-    res.render("routeDetails", { routeId, route });
+    res.render("routeDetails", { route });
   } catch (error) {
     console.error("Error fetching route details:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// DELETE /cruxtrack/route/:id - Delete Route
+router.delete("/route/:id", async (req, res) => {
+  try {
+    const routeId = req.params.id;
+    await Route.findByIdAndDelete(routeId); // Delete the specific route by its ID
+    res.redirect("/cruxtrack/myRoutes");
+  } catch (error) {
+    console.error("Error deleting route:", error);
     res.status(500).send("Internal Server Error");
   }
 });
