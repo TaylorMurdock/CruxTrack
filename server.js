@@ -4,6 +4,7 @@ const express = require("express"); // web framework for node
 const morgan = require("morgan"); // logger for node
 const methodOverride = require("method-override"); // allows us to use PUT and DELETE methods
 const mongoose = require("mongoose"); // MongoDB library
+const session = require("express-session"); // session management library
 
 // express application
 const app = express();
@@ -14,12 +15,22 @@ app.use(methodOverride("_method")); // override with POST having ?_method=DELETE
 app.use(express.static("public")); // serve static files from public folder
 app.use(express.urlencoded({ extended: true })); // parse URL-encoded bodies
 
+// Set up session middleware
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "secret",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
 // Set the view engine and views directory
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 
 // Import the route controller
 const routeController = require("./controllers/routeController");
+const userController = require("./controllers/userController");
 
 // Connect to MongoDB
 mongoose
@@ -40,6 +51,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/cruxtrack", routeController);
+app.use("/users", userController);
 
 // Listen
 const PORT = process.env.PORT || 3000;
