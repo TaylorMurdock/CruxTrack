@@ -28,7 +28,7 @@ app.use(
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 
-// Import the route controller
+// Import the route controllers
 const routeController = require("./controllers/routeController");
 const userController = require("./controllers/userController");
 
@@ -51,7 +51,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/cruxtrack", routeController);
-app.use("/users", userController);
+app.use("/users", userController); // Mount the user routes at the "/users" path
 
 // Listen
 const PORT = process.env.PORT || 3000;

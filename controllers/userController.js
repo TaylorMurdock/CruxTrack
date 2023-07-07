@@ -3,12 +3,12 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("../models/user");
 
-// GET /cruxtrack/register - User Registration Page
+// GET /register - User Registration Page
 router.get("/register", (req, res) => {
   res.render("register");
 });
 
-// POST /cruxtrack/register - User Registration
+// POST /register - User Registration
 router.post("/register", async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -29,19 +29,19 @@ router.post("/register", async (req, res) => {
     });
     await newUser.save();
 
-    res.redirect("/cruxtrack/login");
+    res.redirect("/cruxtrack/users/login");
   } catch (error) {
     console.error("Error registering user:", error);
     res.status(500).send("Internal Server Error");
   }
 });
 
-// GET /cruxtrack/login - User Login Page
+// GET /login - User Login Page
 router.get("/login", (req, res) => {
   res.render("login");
 });
 
-// POST /cruxtrack/login - User Login
+// POST /login - User Login
 router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -68,12 +68,12 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// POST /cruxtrack/logout - User Logout
+// POST /logout - User Logout
 router.post("/logout", (req, res) => {
   // Clear user session or token here
   // Example: req.session.user = null;
 
-  res.redirect("/cruxtrack/login");
+  res.redirect("/cruxtrack/users/login");
 });
 
 module.exports = router;
