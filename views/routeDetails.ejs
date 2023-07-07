@@ -18,6 +18,12 @@
     </p>
     <p>Location: <%= route.location %>
     </p>
+    <!-- Add more details as needed -->
+
+    <!-- Edit Route button -->
+    <form action="/cruxtrack/route/<%= route._id %>/edit">
+        <button type="submit">Edit Route</button>
+    </form>
 
     <!-- Delete Route button -->
     <form action="/cruxtrack/route/<%= route._id %>?_method=DELETE" method="POST">

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Route</title>
+</head>
+
+<body>
+    <h1>Edit Route</h1>
+    <form action="/cruxtrack/route/<%= route._id %>" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= route.name %>" required><br>
+
+        <label for="difficulty">Difficulty:</label>
+        <input type="text" id="difficulty" name="difficulty" value="<%= route.difficulty %>" required><br>
+
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" value="<%= route.type %>" required><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="<%= route.location %>"><br>
+
+        <label for="ticks">Ticks:</label>
+        <input type="text" id="ticks" name="ticks" value="<%= route.ticks %>" required><br>
+
+        <button type="submit">Update Route</button>
+    </form>
+</body>
+
+</html>

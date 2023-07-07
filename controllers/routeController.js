@@ -17,7 +17,7 @@ router.get("/myRoutes", async (req, res) => {
 router.get("/route/:id", async (req, res) => {
   try {
     const routeId = req.params.id;
-    const route = await Route.findById(routeId); // Fetch the specific route by its ID
+    const route = await Route.findById(routeId);
 
     if (!route) {
       return res.status(404).send("Route not found");
@@ -30,11 +30,51 @@ router.get("/route/:id", async (req, res) => {
   }
 });
 
+// GET /cruxtrack/route/:id/edit - Edit Route Page
+router.get("/route/:id/edit", async (req, res) => {
+  try {
+    const routeId = req.params.id;
+    const route = await Route.findById(routeId);
+
+    if (!route) {
+      return res.status(404).send("Route not found");
+    }
+
+    res.render("editRoute", { route });
+  } catch (error) {
+    console.error("Error fetching route details:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// POST /cruxtrack/route/:id - Update Route
+router.post("/route/:id", async (req, res) => {
+  try {
+    const routeId = req.params.id;
+    const { name, difficulty, type, location, ticks } = req.body;
+
+    const updatedRoute = await Route.findByIdAndUpdate(
+      routeId,
+      { name, difficulty, type, location, ticks },
+      { new: true }
+    );
+
+    if (!updatedRoute) {
+      return res.status(404).send("Route not found");
+    }
+
+    res.redirect("/cruxtrack/myRoutes");
+  } catch (error) {
+    console.error("Error updating route:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 // DELETE /cruxtrack/route/:id - Delete Route
 router.delete("/route/:id", async (req, res) => {
   try {
     const routeId = req.params.id;
-    await Route.findByIdAndDelete(routeId); // Delete the specific route by its ID
+    await Route.findByIdAndDelete(routeId);
     res.redirect("/cruxtrack/myRoutes");
   } catch (error) {
     console.error("Error deleting route:", error);
