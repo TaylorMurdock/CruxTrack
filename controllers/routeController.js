@@ -6,9 +6,7 @@ const Route = require("../models/route");
 router.get("/myRoutes", async (req, res) => {
   try {
     const routes = await Route.find(); // Fetch all routes from the database
-    console.log(routes); // Check if routes are properly retrieved
     res.render("myRoutes", { routes });
-    console.log("Rendered myRoutes template"); // Check if the template is rendered
   } catch (error) {
     console.error("Error fetching routes:", error);
     res.status(500).send("Internal Server Error");
@@ -35,6 +33,26 @@ router.get("/route/:id", async (req, res) => {
 // GET /cruxtrack/newRoute - Add New Route Page
 router.get("/newRoute", (req, res) => {
   res.render("newRoute");
+});
+
+// POST /cruxtrack/newRoute - Create a New Route
+router.post("/newRoute", async (req, res) => {
+  try {
+    const { name, difficulty, type, location, ticks } = req.body;
+    const newRoute = new Route({
+      name,
+      difficulty,
+      type,
+      location,
+      ticks,
+    });
+    await newRoute.save();
+    console.log("New route created:", newRoute);
+    res.redirect("/cruxtrack/myRoutes");
+  } catch (error) {
+    console.error("Error creating new route:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 module.exports = router;

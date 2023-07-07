@@ -12,6 +12,7 @@ const app = express();
 app.use(morgan("dev")); // logging
 app.use(methodOverride("_method")); // override with POST having ?_method=DELETE or ?_method=PUT
 app.use(express.static("public")); // serve static files from public folder
+app.use(express.urlencoded({ extended: true })); // parse URL-encoded bodies
 
 // Set the view engine and views directory
 app.set("view engine", "ejs");
@@ -34,6 +35,10 @@ mongoose
   });
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.use("/cruxtrack", routeController);
 
 // Listen
