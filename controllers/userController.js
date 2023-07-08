@@ -3,22 +3,42 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("../models/user");
 
-// GET /users/register - User Registration Page
+// GET /cruxtrack/register - User Registration Page
 router.get("/register", (req, res) => {
   res.render("register", { error: null });
 });
 
-// POST /users/register - User Registration
+// POST /cruxtrack/register - User Registration
 router.post("/register", async (req, res) => {
-  // ...existing code
+  try {
+    const { username, password } = req.body;
+
+    // Check if username already exists
+    const existingUser = await User.findOne({ username });
+    if (existingUser) {
+      return res.render("register", { error: "Username already exists" });
+    }
+
+    // Create a new user
+    const newUser = new User({
+      username,
+      password,
+    });
+    await newUser.save();
+
+    res.redirect("/cruxtrack/login");
+  } catch (error) {
+    console.error("Error registering user:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
-// GET /users/login - User Login Page
+// GET /cruxtrack/login - User Login Page
 router.get("/login", (req, res) => {
   res.render("login", { error: null });
 });
 
-// POST /users/login - User Login
+// POST /cruxtrack/login - User Login
 router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -38,19 +58,19 @@ router.post("/login", async (req, res) => {
     // Set user session or token here
     // Example: req.session.user = user;
 
-    res.redirect("/cruxtrack/myRoutes");
+    res.redirect("/mycruxtrack/myroutes");
   } catch (error) {
     console.error("Error logging in:", error);
     res.status(500).send("Internal Server Error");
   }
 });
 
-// POST /users/logout - User Logout
+// POST /cruxtrack/logout - User Logout
 router.post("/logout", (req, res) => {
   // Clear user session or token here
   // Example: req.session.user = null;
 
-  res.redirect("/users/login");
+  res.redirect("/cruxtrack/login");
 });
 
 module.exports = router;

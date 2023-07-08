@@ -50,8 +50,8 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/cruxtrack", routeController);
-app.use("/users", userController); // Mount the user routes at the "/users" path
+app.use("/mycruxtrack", routeController);
+app.use("/cruxtrack", userController); // Mount the user routes at the "/users" path
 
 // Listen
 const PORT = process.env.PORT || 3000;

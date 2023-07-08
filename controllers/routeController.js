@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Route = require("../models/route");
 
-// GET /cruxtrack/myRoutes - List of Routes
-router.get("/myRoutes", async (req, res) => {
+// GET /cruxtrack/myroutes - List of Routes
+router.get("/myroutes", async (req, res) => {
   try {
     const routes = await Route.find();
-    res.render("myRoutes", { routes });
+    res.render("myroutes", { routes });
   } catch (error) {
     console.error("Error fetching routes:", error);
     res.status(500).send("Internal Server Error");
@@ -23,7 +23,7 @@ router.get("/route/:id", async (req, res) => {
       return res.status(404).send("Route not found");
     }
 
-    res.render("routeDetails", { route });
+    res.render("routedetails", { route });
   } catch (error) {
     console.error("Error fetching route details:", error);
     res.status(500).send("Internal Server Error");
@@ -63,7 +63,7 @@ router.post("/route/:id", async (req, res) => {
       return res.status(404).send("Route not found");
     }
 
-    res.redirect("/cruxtrack/myRoutes");
+    res.redirect("/mycruxtrack/myroutes");
   } catch (error) {
     console.error("Error updating route:", error);
     res.status(500).send("Internal Server Error");
@@ -75,20 +75,20 @@ router.delete("/route/:id", async (req, res) => {
   try {
     const routeId = req.params.id;
     await Route.findByIdAndDelete(routeId);
-    res.redirect("/cruxtrack/myRoutes");
+    res.redirect("/mycruxtrack/myroutes");
   } catch (error) {
     console.error("Error deleting route:", error);
     res.status(500).send("Internal Server Error");
   }
 });
 
-// GET /cruxtrack/newRoute - Add New Route Page
-router.get("/newRoute", (req, res) => {
+// GET /cruxtrack/newroute - Add New Route Page
+router.get("/newroute", (req, res) => {
   res.render("newRoute");
 });
 
-// POST /cruxtrack/newRoute - Create a New Route
-router.post("/newRoute", async (req, res) => {
+// POST /cruxtrack/newroute - Create a New Route
+router.post("/newroute", async (req, res) => {
   try {
     const { name, difficulty, type, location, ticks } = req.body;
     const newRoute = new Route({
@@ -100,7 +100,7 @@ router.post("/newRoute", async (req, res) => {
     });
     await newRoute.save();
     console.log("New route created:", newRoute);
-    res.redirect("/cruxtrack/myRoutes");
+    res.redirect("/cruxtrack/myroutes");
   } catch (error) {
     console.error("Error creating new route:", error);
     res.status(500).send("Internal Server Error");

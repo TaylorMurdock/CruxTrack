@@ -21,17 +21,17 @@
     <!-- Add more details as needed -->
 
     <!-- Edit Route button -->
-    <form action="/cruxtrack/route/<%= route._id %>/edit">
+    <form action="/mycruxtrack/route/<%= route._id %>/edit">
         <button type="submit">Edit Route</button>
     </form>
 
     <!-- Delete Route button -->
-    <form action="/cruxtrack/route/<%= route._id %>?_method=DELETE" method="POST">
+    <form action="/mycruxtrack/route/<%= route._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete Route</button>
     </form>
 
     <!-- Back to Routes button -->
-    <form action="/cruxtrack/myRoutes">
+    <form action="/mycruxtrack/myroutes">
         <button type="submit">Back to Routes</button>
     </form>
 </body>

@@ -17,14 +17,14 @@
             <ul>
                 <% routes.forEach((route)=> { %>
                     <li>
-                        <a href="/cruxtrack/route/<%= route._id %>">
+                        <a href="/mycruxtrack/route/<%= route._id %>">
                             <%= route.name %>
                         </a>
                     </li>
                     <% }) %>
             </ul>
             <% } %>
-                <a href="/cruxtrack/newRoute">Add New Route</a>
+                <a href="/mycruxtrack/newroute">Add New Route</a>
                 <form action="/cruxtrack/logout" method="POST">
                     <button type="submit">Logout</button>
                 </form>
