@@ -15,12 +15,17 @@ const routeSchema = new mongoose.Schema({
   },
   location: {
     type: String,
+    required: true,
   },
   ticks: {
     type: String,
     required: true,
   },
-  // Add more properties as needed
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 });
 
 const Route = mongoose.model("Route", routeSchema);

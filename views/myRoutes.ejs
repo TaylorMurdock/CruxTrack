@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List of Routes</title>
+    <script>
+        function confirmDeleteAccount() {
+            if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+                document.getElementById("deleteAccountForm").submit();
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -27,6 +34,9 @@
                 <a href="/mycruxtrack/newroute">Add New Route</a>
                 <form action="/cruxtrack/logout" method="POST">
                     <button type="submit">Logout</button>
+                </form>
+                <form id="deleteAccountForm" action="/cruxtrack/deleteaccount" method="POST">
+                    <button type="button" onclick="confirmDeleteAccount()">Delete Account</button>
                 </form>
 </body>
 

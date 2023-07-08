@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("../models/user");
+const Route = require("../models/route");
 
 // GET /cruxtrack/register - User Registration Page
 router.get("/register", (req, res) => {
-  res.render("register", { error: null });
+  res.render("register", { error: req.query.error || null });
 });
 
 // POST /cruxtrack/register - User Registration
@@ -16,7 +17,7 @@ router.post("/register", async (req, res) => {
     // Check if username already exists
     const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res.render("register", { error: "Username already exists" });
+      return res.redirect("/cruxtrack/register?error=Username already exists");
     }
 
     // Create a new user
@@ -35,7 +36,7 @@ router.post("/register", async (req, res) => {
 
 // GET /cruxtrack/login - User Login Page
 router.get("/login", (req, res) => {
-  res.render("login", { error: null });
+  res.render("login", { error: req.query.error || null });
 });
 
 // POST /cruxtrack/login - User Login
@@ -46,17 +47,21 @@ router.post("/login", async (req, res) => {
     // Find the user by username
     const user = await User.findOne({ username });
     if (!user) {
-      return res.render("login", { error: "Invalid username or password" });
+      return res.redirect(
+        "/cruxtrack/login?error=Invalid username or password"
+      );
     }
 
     // Compare the password
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.render("login", { error: "Invalid username or password" });
+      return res.redirect(
+        "/cruxtrack/login?error=Invalid username or password"
+      );
     }
 
     // Set user session or token here
-    // Example: req.session.user = user;
+    req.session.user = user._id;
 
     res.redirect("/mycruxtrack/myroutes");
   } catch (error) {
@@ -68,9 +73,29 @@ router.post("/login", async (req, res) => {
 // POST /cruxtrack/logout - User Logout
 router.post("/logout", (req, res) => {
   // Clear user session or token here
-  // Example: req.session.user = null;
+  req.session.user = null;
 
   res.redirect("/cruxtrack/login");
+});
+
+// POST /cruxtrack/deleteaccount - Delete User Account
+router.post("/deleteaccount", async (req, res) => {
+  try {
+    // Add authentication mechanism here to ensure user confirmation or verification
+
+    // Delete the user account and associated routes
+    const userId = req.session.user;
+    await User.findByIdAndDelete(userId);
+    await Route.deleteMany({ user: userId });
+
+    // Clear the session or token after deleting the account
+    req.session.user = null;
+
+    res.redirect("/cruxtrack/register"); // Redirect to registration page or any other desired page
+  } catch (error) {
+    console.error("Error deleting user account:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 module.exports = router;

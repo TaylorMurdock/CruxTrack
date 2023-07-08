@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Route = require("../models/route");
 
-// GET /cruxtrack/myroutes - List of Routes
+// GET /mycruxtrack/myroutes - List of Routes
 router.get("/myroutes", async (req, res) => {
   try {
-    const routes = await Route.find();
+    const userId = req.session.user;
+    const routes = await Route.find({ user: userId });
     res.render("myroutes", { routes });
   } catch (error) {
     console.error("Error fetching routes:", error);
@@ -13,7 +14,7 @@ router.get("/myroutes", async (req, res) => {
   }
 });
 
-// GET /cruxtrack/route/:id - Specific Route Details
+// GET /mycruxtrack/route/:id - Specific Route Details
 router.get("/route/:id", async (req, res) => {
   try {
     const routeId = req.params.id;
@@ -30,7 +31,7 @@ router.get("/route/:id", async (req, res) => {
   }
 });
 
-// GET /cruxtrack/route/:id/edit - Edit Route Page
+// GET /mycruxtrack/route/:id/edit - Edit Route Page
 router.get("/route/:id/edit", async (req, res) => {
   try {
     const routeId = req.params.id;
@@ -47,7 +48,7 @@ router.get("/route/:id/edit", async (req, res) => {
   }
 });
 
-// POST /cruxtrack/route/:id - Update Route
+// POST /mycruxtrack/route/:id - Update Route
 router.post("/route/:id", async (req, res) => {
   try {
     const routeId = req.params.id;
@@ -70,7 +71,7 @@ router.post("/route/:id", async (req, res) => {
   }
 });
 
-// DELETE /cruxtrack/route/:id - Delete Route
+// DELETE /mycruxtrack/route/:id - Delete Route
 router.delete("/route/:id", async (req, res) => {
   try {
     const routeId = req.params.id;
@@ -82,21 +83,23 @@ router.delete("/route/:id", async (req, res) => {
   }
 });
 
-// GET /cruxtrack/newroute - Add New Route Page
+// GET /mycruxtrack/newroute - Add New Route Page
 router.get("/newroute", (req, res) => {
   res.render("newRoute");
 });
 
-// POST /cruxtrack/newroute - Create a New Route
+// POST /mycruxtrack/newroute - Create a New Route
 router.post("/newroute", async (req, res) => {
   try {
     const { name, difficulty, type, location, ticks } = req.body;
+    const userId = req.session.user;
     const newRoute = new Route({
       name,
       difficulty,
       type,
       location,
       ticks,
+      user: userId,
     });
     await newRoute.save();
     console.log("New route created:", newRoute);

@@ -27,7 +27,13 @@
         <input type="text" id="ticks" name="ticks" value="<%= route.ticks %>" required><br>
 
         <button type="submit">Update Route</button>
+
     </form>
+
+    <form action="/mycruxtrack/myroutes" method="GET">
+        <button type="submit">Back to Routes</button>
+    </form>
+    <%- include('logoutButton') %>
 </body>
 
 </html>

@@ -50,8 +50,16 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/mycruxtrack", routeController);
-app.use("/cruxtrack", userController); // Mount the user routes at the "/users" path
+app.use("/mycruxtrack", ensureAuthenticated, routeController);
+app.use("/cruxtrack", userController); // Mount the user routes at the "/cruxtrack" path
+
+// Middleware to ensure user is authenticated
+function ensureAuthenticated(req, res, next) {
+  if (req.session.user) {
+    return next();
+  }
+  res.redirect("/cruxtrack/login");
+}
 
 // Listen
 const PORT = process.env.PORT || 3000;
