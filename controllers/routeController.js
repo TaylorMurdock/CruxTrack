@@ -14,7 +14,7 @@ router.get("/myroutes", async (req, res) => {
     }
 
     const routes = await Route.find({ user: userId });
-    res.render("myroutes", { routes, user });
+    res.render("myRoutes.ejs", { routes, user });
   } catch (error) {
     console.error("Error fetching routes:", error);
     res.status(500).send("Internal Server Error");
