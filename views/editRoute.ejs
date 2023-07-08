@@ -10,6 +10,9 @@
 
 <body>
     <h1>Edit Route</h1>
+    <p>Logged in as: <%= user.username %>
+    </p>
+
     <form action="/mycruxtrack/route/<%= route._id %>" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="<%= route.name %>" required><br>

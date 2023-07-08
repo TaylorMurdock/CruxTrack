@@ -10,6 +10,9 @@
 
 <body>
     <h1>Route Details</h1>
+    <p>Logged in as: <%= user.username %>
+    </p>
+
     <p>Name: <%= route.name %>
     </p>
     <p>Difficulty: <%= route.difficulty %>
@@ -18,23 +21,14 @@
     </p>
     <p>Location: <%= route.location %>
     </p>
-    <!-- Add more details as needed -->
+    <p>Ticks: <%= route.ticks %>
+    </p>
 
-    <!-- Edit Route button -->
-    <form action="/mycruxtrack/route/<%= route._id %>/edit">
-        <button type="submit">Edit Route</button>
-    </form>
-
-    <!-- Delete Route button -->
+    <a href="/mycruxtrack/myroutes">Back to Routes</a>
+    <a href="/mycruxtrack/route/<%= route._id %>/edit">Edit Route</a>
     <form action="/mycruxtrack/route/<%= route._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete Route</button>
     </form>
-
-    <!-- Back to Routes button -->
-    <form action="/mycruxtrack/myroutes">
-        <button type="submit">Back to Routes</button>
-    </form>
-    <%- include('logoutButton') %>
 </body>
 
 </html>

@@ -1,13 +1,20 @@
 const express = require("express");
 const router = express.Router();
 const Route = require("../models/route");
+const User = require("../models/user");
 
 // GET /mycruxtrack/myroutes - List of Routes
 router.get("/myroutes", async (req, res) => {
   try {
     const userId = req.session.user;
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).send("User not found");
+    }
+
     const routes = await Route.find({ user: userId });
-    res.render("myroutes", { routes });
+    res.render("myroutes", { routes, user });
   } catch (error) {
     console.error("Error fetching routes:", error);
     res.status(500).send("Internal Server Error");
@@ -24,13 +31,15 @@ router.get("/route/:id", async (req, res) => {
       return res.status(404).send("Route not found");
     }
 
-    res.render("routedetails", { route });
+    const userId = req.session.user;
+    const user = await User.findById(userId);
+
+    res.render("routedetails", { route, user });
   } catch (error) {
     console.error("Error fetching route details:", error);
     res.status(500).send("Internal Server Error");
   }
 });
-
 // GET /mycruxtrack/route/:id/edit - Edit Route Page
 router.get("/route/:id/edit", async (req, res) => {
   try {
@@ -41,13 +50,15 @@ router.get("/route/:id/edit", async (req, res) => {
       return res.status(404).send("Route not found");
     }
 
-    res.render("editRoute", { route });
+    const userId = req.session.user;
+    const user = await User.findById(userId);
+
+    res.render("editRoute", { route, user });
   } catch (error) {
     console.error("Error fetching route details:", error);
     res.status(500).send("Internal Server Error");
   }
 });
-
 // POST /mycruxtrack/route/:id - Update Route
 router.post("/route/:id", async (req, res) => {
   try {
@@ -84,8 +95,11 @@ router.delete("/route/:id", async (req, res) => {
 });
 
 // GET /mycruxtrack/newroute - Add New Route Page
-router.get("/newroute", (req, res) => {
-  res.render("newRoute");
+router.get("/newroute", async (req, res) => {
+  const userId = req.session.user;
+  const user = await User.findById(userId);
+
+  res.render("newRoute", { user });
 });
 
 // POST /mycruxtrack/newroute - Create a New Route

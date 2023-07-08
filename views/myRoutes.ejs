@@ -18,6 +18,9 @@
 <body>
     <h1>CruxTrack</h1>
     <h2>My Routes</h2>
+    <p>Logged in as: <%= user.username %>
+    </p>
+
     <% if (routes.length===0) { %>
         <p>No routes found.</p>
         <% } else { %>
