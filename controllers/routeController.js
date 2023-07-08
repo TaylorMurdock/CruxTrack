@@ -100,7 +100,7 @@ router.post("/newroute", async (req, res) => {
     });
     await newRoute.save();
     console.log("New route created:", newRoute);
-    res.redirect("/cruxtrack/myroutes");
+    res.redirect("/mycruxtrack/myroutes");
   } catch (error) {
     console.error("Error creating new route:", error);
     res.status(500).send("Internal Server Error");
