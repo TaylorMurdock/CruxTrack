@@ -31,5 +31,6 @@ CruxTrack is a web application designed to help rock climbers track and manage t
 
 
 ## ERD (ENTITY RELATIONSHIP DIAGRAM)
-![ERD](img/../imgs/erd.png)
+![ERD](imgs/erd.png)
+
 made with https://lucid.app/
