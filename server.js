@@ -50,8 +50,8 @@ mongoose
 //   res.send("Hello World!");
 // });
 
-app.use("/mycruxtrack", ensureAuthenticated, routeController);
 app.use("/", userController); // Mount the user routes at the "/cruxtrack" path
+app.use("/mycruxtrack", ensureAuthenticated, routeController);
 
 // Middleware to ensure user is authenticated
 function ensureAuthenticated(req, res, next) {
