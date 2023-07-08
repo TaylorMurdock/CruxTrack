@@ -17,7 +17,7 @@ router.post("/register", async (req, res) => {
     // Check if username already exists
     const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res.redirect("/cruxtrack/register?error=Username already exists");
+      return res.redirect("/register?error=Username already exists");
     }
 
     // Create a new user
