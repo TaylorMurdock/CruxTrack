@@ -27,7 +27,7 @@ router.post("/register", async (req, res) => {
     });
     await newUser.save();
 
-    res.redirect("/cruxtrack/login");
+    res.redirect("/login");
   } catch (error) {
     console.error("Error registering user:", error);
     res.status(500).send("Internal Server Error");
@@ -47,17 +47,13 @@ router.post("/login", async (req, res) => {
     // Find the user by username
     const user = await User.findOne({ username });
     if (!user) {
-      return res.redirect(
-        "/cruxtrack/login?error=Invalid username or password"
-      );
+      return res.redirect("/login?error=Invalid username or password");
     }
 
     // Compare the password
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.redirect(
-        "/cruxtrack/login?error=Invalid username or password"
-      );
+      return res.redirect("/login?error=Invalid username or password");
     }
 
     // Set user session or token here
@@ -75,7 +71,7 @@ router.post("/logout", (req, res) => {
   // Clear user session or token here
   req.session.user = null;
 
-  res.redirect("/cruxtrack/login");
+  res.redirect("/login");
 });
 
 // POST /cruxtrack/deleteaccount - Delete User Account
@@ -91,7 +87,7 @@ router.post("/deleteaccount", async (req, res) => {
     // Clear the session or token after deleting the account
     req.session.user = null;
 
-    res.redirect("/cruxtrack/register"); // Redirect to registration page or any other desired page
+    res.redirect("/register"); // Redirect to registration page or any other desired page
   } catch (error) {
     console.error("Error deleting user account:", error);
     res.status(500).send("Internal Server Error");
