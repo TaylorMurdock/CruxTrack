@@ -24,8 +24,12 @@
     <p>Ticks: <%= route.ticks %>
     </p>
 
-    <a href="/mycruxtrack/myroutes">Back to Routes</a>
-    <a href="/mycruxtrack/route/<%= route._id %>/edit">Edit Route</a>
+    <form action="/mycruxtrack/myroutes" method="GET">
+        <button type="submit">Back to Routes</button>
+    </form>
+    <form action="/mycruxtrack/route/<%= route._id %>/edit" method="GET">
+        <button type="submit">Edit Route</button>
+    </form>
     <form action="/mycruxtrack/route/<%= route._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete Route</button>
     </form>
