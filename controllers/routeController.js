@@ -34,7 +34,7 @@ router.get("/route/:id", async (req, res) => {
     const userId = req.session.user;
     const user = await User.findById(userId);
 
-    res.render("routedetails", { route, user });
+    res.render("routedetails.ejs", { route, user });
   } catch (error) {
     console.error("Error fetching route details:", error);
     res.status(500).send("Internal Server Error");
@@ -53,7 +53,7 @@ router.get("/route/:id/edit", async (req, res) => {
     const userId = req.session.user;
     const user = await User.findById(userId);
 
-    res.render("editRoute", { route, user });
+    res.render("editRoute.ejs", { route, user });
   } catch (error) {
     console.error("Error fetching route details:", error);
     res.status(500).send("Internal Server Error");
@@ -99,7 +99,7 @@ router.get("/newroute", async (req, res) => {
   const userId = req.session.user;
   const user = await User.findById(userId);
 
-  res.render("newRoute", { user });
+  res.render("newRoute.ejs", { user });
 });
 
 // POST /mycruxtrack/newroute - Create a New Route
