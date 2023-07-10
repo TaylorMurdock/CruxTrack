@@ -34,7 +34,7 @@ router.get("/route/:id", async (req, res) => {
     const userId = req.session.user;
     const user = await User.findById(userId);
 
-    res.render("routedetails.ejs", { route, user });
+    res.render("routeDetails.ejs", { route, user });
   } catch (error) {
     console.error("Error fetching route details:", error);
     res.status(500).send("Internal Server Error");
