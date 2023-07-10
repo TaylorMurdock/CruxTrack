@@ -7,24 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
+    <link rel="stylesheet" href="/register.css">
 </head>
 
 <body>
-    <h1>User Registration</h1>
+    <h1 class="register-title">User Registration</h1>
     <% if (error) { %>
-        <p>Error: <%= error %>
+        <p class="error-message">Error: <%= error %>
         </p>
         <% } %>
-            <form action="/register" method="POST">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required><br>
+            <form action="/register" method="POST" class="register-form">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" id="username" name="username" required class="form-input"><br>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required><br>
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" id="password" name="password" required class="form-input"><br>
 
-                <button type="submit">Register</button>
+                <button type="submit" class="register-button">Register</button>
             </form>
-            <p>Already have an account? <a href="/">Login</a></p>
+            <p class="login-link">Already have an account? <a href="/">Login</a></p>
 </body>
 
 </html>

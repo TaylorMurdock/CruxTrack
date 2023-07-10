@@ -5,6 +5,7 @@ const morgan = require("morgan"); // logger for node
 const methodOverride = require("method-override"); // allows us to use PUT and DELETE methods
 const mongoose = require("mongoose"); // MongoDB library
 const session = require("express-session"); // session management library
+const path = require("path"); // path module
 
 // express application
 const app = express();
@@ -12,7 +13,7 @@ const app = express();
 // middleware
 app.use(morgan("dev")); // logging
 app.use(methodOverride("_method")); // override with POST having ?_method=DELETE or ?_method=PUT
-app.use(express.static("public")); // serve static files from public folder
+app.use(express.static(path.join(__dirname, "public"))); // serve static files from public folder
 app.use(express.urlencoded({ extended: true })); // parse URL-encoded bodies
 
 // Set up session middleware
@@ -26,7 +27,7 @@ app.use(
 
 // Set the view engine and views directory
 app.set("view engine", "ejs");
-app.set("views", __dirname + "/views");
+app.set("views", path.join(__dirname, "views"));
 
 // Import the route controllers
 const routeController = require("./controllers/routeController");

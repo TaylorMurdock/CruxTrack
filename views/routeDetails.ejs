@@ -6,36 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Route Details</title>
+    <link rel="stylesheet" href="/routeDetails.css">
 </head>
 
 <body>
-    <h1>Route Details</h1>
-    <p>Logged in as: <%= user.username %>
+    <h1 class="route-title">Route Details</h1>
+    <p class="user-info">Logged in as: <%= user.username %>
     </p>
 
-    <p>Name: <%= route.name %>
+    <p class="route-info">Name: <%= route.name %>
     </p>
-    <p>Difficulty: <%= route.difficulty %>
+    <p class="route-info">Difficulty: <%= route.difficulty %>
     </p>
-    <p>Type: <%= route.type %>
+    <p class="route-info">Type: <%= route.type %>
     </p>
-    <p>Location: <%= route.location %>
+    <p class="route-info">Location: <%= route.location %>
     </p>
-    <p>Ticks: <%= route.ticks %>
+    <p class="route-info">Ticks: <%= route.ticks %>
     </p>
 
     <form action="/mycruxtrack/myroutes" method="GET">
-        <button type="submit">Back to Routes</button>
+        <button class="back-button" type="submit">Back to Routes</button>
     </form>
     <form action="/mycruxtrack/route/<%= route._id %>/edit" method="GET">
-        <button type="submit">Edit Route</button>
+        <button class="edit-button" type="submit">Edit Route</button>
     </form>
     <form action="/mycruxtrack/route/<%= route._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete Route</button>
+        <button class="delete-button" type="submit">Delete Route</button>
     </form>
-    <form action="/logout" method="POST">
-        <button type="submit">Logout</button>
-    </form>
+    <%- include('logoutButton') %>
+        <%- include('homeButton') %>
 </body>
 
 </html>

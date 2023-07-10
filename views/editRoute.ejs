@@ -6,37 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Route</title>
+    <link rel="stylesheet" href="/editRoute.css">
 </head>
 
 <body>
-    <h1>Edit Route</h1>
-    <p>Logged in as: <%= user.username %>
+    <h1 class="edit-route-title">Edit Route</h1>
+    <p class="logged-in-as">Logged in as: <%= user.username %>
     </p>
 
-    <form action="/mycruxtrack/route/<%= route._id %>" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="<%= route.name %>" required><br>
+    <form action="/mycruxtrack/route/<%= route._id %>" method="POST" class="edit-route-form">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" name="name" value="<%= route.name %>" required class="form-input"><br>
 
-        <label for="difficulty">Difficulty:</label>
-        <input type="text" id="difficulty" name="difficulty" value="<%= route.difficulty %>" required><br>
+        <label for="difficulty" class="form-label">Difficulty:</label>
+        <input type="text" id="difficulty" name="difficulty" value="<%= route.difficulty %>" required
+            class="form-input"><br>
 
-        <label for="type">Type:</label>
-        <input type="text" id="type" name="type" value="<%= route.type %>" required><br>
+        <label for="type" class="form-label">Type:</label>
+        <input type="text" id="type" name="type" value="<%= route.type %>" required class="form-input"><br>
 
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" value="<%= route.location %>"><br>
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" id="location" name="location" value="<%= route.location %>" class="form-input"><br>
 
-        <label for="ticks">Ticks:</label>
-        <input type="text" id="ticks" name="ticks" value="<%= route.ticks %>" required><br>
+        <label for="ticks" class="form-label">Ticks:</label>
+        <input type="text" id="ticks" name="ticks" value="<%= route.ticks %>" required class="form-input"><br>
 
-        <button type="submit">Update Route</button>
-
+        <button type="submit" class="update-route-button">Update Route</button>
     </form>
 
-    <form action="/mycruxtrack/myroutes" method="GET">
-        <button type="submit">Back to Routes</button>
-    </form>
-    <%- include('logoutButton') %>
+    <%- include('homeButton') %>
+        <%- include('logoutButton') %>
 </body>
 
 </html>

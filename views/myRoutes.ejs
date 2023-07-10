@@ -13,18 +13,19 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="/myRoutes.css">
 </head>
 
 <body>
-    <h1>CruxTrack</h1>
-    <h2>My Routes</h2>
-    <p>Logged in as: <%= user.username %>
+    <h1 class="cruxtrack-title">CruxTrack</h1>
+    <h2 class="my-routes-title">My Routes</h2>
+    <p class="logged-in-as">Logged in as: <%= user.username %>
     </p>
 
     <% if (routes.length===0) { %>
         <p>No routes found.</p>
         <% } else { %>
-            <ul>
+            <ul class="route-list">
                 <% routes.forEach((route)=> { %>
                     <li>
                         <a href="/mycruxtrack/route/<%= route._id %>">
@@ -34,13 +35,15 @@
                     <% }) %>
             </ul>
             <% } %>
-                <button onclick="location.href='/mycruxtrack/newroute'">Add New Route</button>
-                <form action="/logout" method="POST">
-                    <button type="submit">Logout</button>
-                </form>
-                <form id="deleteAccountForm" action="/deleteaccount" method="POST">
-                    <button type="button" onclick="confirmDeleteAccount()">Delete Account</button>
-                </form>
+
+                <button onclick="location.href='/mycruxtrack/newroute'" class="add-route-button">Add New Route</button>
+
+                <%- include('logoutButton') %>
+
+                    <form id="deleteAccountForm" action="/deleteaccount" method="POST">
+                        <button type="button" onclick="confirmDeleteAccount()" class="delete-account-button">Delete
+                            Account</button>
+                    </form>
 </body>
 
 </html>
