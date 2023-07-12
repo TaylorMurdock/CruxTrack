@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login</title>
+    <title>CruxTrack Login</title>
     <link rel="stylesheet" href="/login.css">
 
 </head>
 
 <body>
-    <h1 class="login-title">User Login</h1>
+    <h1 class="login-title">CruxTrack</h1>
     <% if (error) { %>
         <p class="error-message">Error: <%= error %>
         </p>
@@ -25,9 +25,12 @@
                 <input type="password" id="password" name="password" required class="form-input"><br>
 
                 <button type="submit" class="login-button">Login</button>
-            </form>
 
-            <p>Don't have an account? <a href="/register" class="register-link">Register</a></p>
+                <div class="register-container">
+                    <p>Don't have an account? <a href="/register" class="register-link">Register</a></p>
+                </div>
+
+            </form>
 </body>
 
 </html>

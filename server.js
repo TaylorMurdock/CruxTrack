@@ -1,20 +1,21 @@
 // Import our dependencies
-require("dotenv").config(); // bring in our .env vars
-const express = require("express"); // web framework for node
-const morgan = require("morgan"); // logger for node
-const methodOverride = require("method-override"); // allows us to use PUT and DELETE methods
-const mongoose = require("mongoose"); // MongoDB library
-const session = require("express-session"); // session management library
-const path = require("path"); // path module
+require("dotenv").config();
+const express = require("express");
+const morgan = require("morgan");
+const methodOverride = require("method-override");
+const mongoose = require("mongoose");
+const session = require("express-session");
+const path = require("path");
 
 // express application
 const app = express();
 
 // middleware
-app.use(morgan("dev")); // logging
-app.use(methodOverride("_method")); // override with POST having ?_method=DELETE or ?_method=PUT
+app.use(morgan("dev"));
+app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public"))); // serve static files from public folder
-app.use(express.urlencoded({ extended: true })); // parse URL-encoded bodies
+app.use("/imgs", express.static(path.join(__dirname, "imgs"))); // serve static files from imgs folder
+app.use(express.urlencoded({ extended: true }));
 
 // Set up session middleware
 app.use(

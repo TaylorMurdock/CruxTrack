@@ -1,15 +1,22 @@
 /* login.css */
 
 body {
-    background-color: #f0f2f5;
-    font-family: Arial, sans-serif;
+    background-image: url("/imgs/loginBackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
     margin: 0;
     padding: 0;
 }
 
 .login-title {
+    font-family: 'GFS Neohellenic', sans-serif;
     text-align: center;
-    color: #1877f2;
+    color: #3a493d;
+    font-size: 60px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+
 }
 
 .error-message {
@@ -17,9 +24,10 @@ body {
     margin-bottom: 10px;
 }
 
-.login-form {
+.login-form,
+.register-form {
     max-width: 300px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 5px;
@@ -34,27 +42,37 @@ body {
 }
 
 .form-input {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #cccccc;
     border-radius: 5px;
 }
 
-.login-button {
+.login-button,
+.register-button {
     width: 100%;
     padding: 10px;
-    background-color: #1877f2;
+    background-color: #4caf50;
     color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.login-button:hover {
-    background-color: #145997;
+.login-button:hover,
+.register-button:hover {
+    background-color: #45a049;
 }
 
-.register-link {
-    color: #1877f2;
+.register-link,
+.login-link {
+    text-align: center;
+    color: #4caf50;
+    text-decoration: none;
+}
+
+.register-link:hover,
+.login-link:hover {
+    text-decoration: underline;
 }
