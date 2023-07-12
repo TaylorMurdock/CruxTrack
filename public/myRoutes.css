@@ -1,3 +1,109 @@
 body {
-    background-color: palegreen;
+    background-image: url("/imgs/routesBackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'GFS Neohellenic', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    margin-top: 50px;
+    margin-bottom: -83px;
+}
+
+h2 {
+    font-family: 'GFS Neohellenic', sans-serif;
+    text-align: left;
+    color: white;
+    font-size: 40px;
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.user-info {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    color: white;
+    margin-right: 10px;
+}
+
+.logout-button {
+    margin-bottom: 5px;
+}
+
+.delete-account-button {
+    color: whitesmoke;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(154, 28, 0);
+}
+
+.add-route-button {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    margin: 0;
+    z-index: 1;
+    margin-top: 40px;
+    background-color: rgba(179, 140, 1);
+    margin-left: 15px;
+    padding: 7.5px 15px;
+    /* Increase the padding */
+    font-size: 20px;
+    /* Increase the font size */
+}
+
+.route-container {
+    text-align: center;
+    background-color: rgba(179, 140, 1, 0.8);
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 0);
+    column-count: 1;
+    column-gap: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.route-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    display: block;
+}
+
+.route-list li {
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
+}
+
+.route-list li a {
+    text-decoration: underline;
+    color: black;
+    font-size: larger;
+    text-align: center;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .route-container {
+        column-count: 2;
+    }
 }

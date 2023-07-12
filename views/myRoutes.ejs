@@ -19,31 +19,36 @@
 <body>
     <h1 class="cruxtrack-title">CruxTrack</h1>
     <h2 class="my-routes-title">My Routes</h2>
-    <p class="logged-in-as">Logged in as: <%= user.username %>
-    </p>
+    <div class="user-info">
+        <p class="logged-in-as">Logged In: <%= user.username %>
+        </p>
+        <%- include('logoutButton') %>
+            <form id="deleteAccountForm" action="/deleteaccount" method="POST">
+                <button type="button" onclick="confirmDeleteAccount()" class="delete-account-button">Delete
+                    Account</button>
+            </form>
+    </div>
 
-    <% if (routes.length===0) { %>
-        <p>No routes found.</p>
-        <% } else { %>
-            <ul class="route-list">
-                <% routes.forEach((route)=> { %>
-                    <li>
-                        <a href="/mycruxtrack/route/<%= route._id %>">
-                            <%= route.name %>
-                        </a>
-                    </li>
-                    <% }) %>
-            </ul>
-            <% } %>
+    <div class="route-container">
+        <% if (routes.length===0) { %>
+            <p>No routes found.</p>
+            <% } else { %>
+                <ul class="route-list">
+                    <% routes.forEach((route)=> { %>
+                        <li>
+                            <a href="/mycruxtrack/route/<%= route._id %>">
+                                <%= route.name %>
+                            </a>
+                        </li>
+                        <% }) %>
+                </ul>
+                <% } %>
 
-                <button onclick="location.href='/mycruxtrack/newroute'" class="add-route-button">Add New Route</button>
 
-                <%- include('logoutButton') %>
-
-                    <form id="deleteAccountForm" action="/deleteaccount" method="POST">
-                        <button type="button" onclick="confirmDeleteAccount()" class="delete-account-button">Delete
-                            Account</button>
-                    </form>
+    </div>
+    <button onclick="location.href='/mycruxtrack/newroute'" class="add-route-button">Add New
+        Route</button>
 </body>
+
 
 </html>
