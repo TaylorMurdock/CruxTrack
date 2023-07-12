@@ -32,14 +32,15 @@ h2 {
 .user-info {
     position: absolute;
     text-align: center;
-    bottom: 0;
-    right: 0;
+    bottom: 30px;
+    right: 10px;
     color: white;
     margin-right: 10px;
 }
 
 .logout-button {
     margin-bottom: 5px;
+    display: block;
 }
 
 .delete-account-button {
