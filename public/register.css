@@ -79,3 +79,62 @@ body {
 .login-link:hover {
     text-decoration: underline;
 }
+
+@media screen and (min-width: 320px) {
+    body {
+        /* Styles for screens up to 320px width */
+        background-size: cover;
+        background-repeat: repeat;
+        background-position: center top;
+        margin: 0;
+        padding: 0;
+    }
+
+    .register-title {
+        /* Styles for screens up to 320px width */
+        font-size: 40px;
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+
+    .register-form {
+        /* Styles for screens up to 320px width */
+        max-width: 250px;
+        padding: 15px;
+    }
+
+    .error-message {
+        /* Styles for screens up to 320px width */
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .form-label {
+        /* Styles for screens up to 320px width */
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .form-input {
+        /* Styles for screens up to 320px width */
+        padding: 8px;
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+
+    .register-button {
+        /* Styles for screens up to 320px width */
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .register-link {
+        /* Styles for screens up to 320px width */
+        font-size: 14px;
+    }
+
+    .login-link {
+        /* Styles for screens up to 320px width */
+        font-size: 14px;
+    }
+}
