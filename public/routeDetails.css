@@ -66,7 +66,7 @@ h2 {
 
 .button-container {
     text-align: center;
-    margin-top: 30%;
+    margin-top: 10%;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -104,4 +104,144 @@ h2 {
 
 .label {
     text-decoration: underline;
+}
+
+@media (max-width: 425px) {
+    h2 {
+        display: none;
+    }
+
+    .back-button {
+        position: absolute;
+        top: 80px;
+        left: 10px;
+        margin: 0;
+        z-index: 1;
+        margin-top: 550px;
+        background-color: rgba(179, 140, 1);
+        margin-left: 27%;
+        padding: 7.5px 15px;
+        /* Increase the padding */
+        font-size: 20px;
+        /* Increase the font size */
+    }
+
+    .user-info {
+        display: none;
+    }
+
+    .route-info-container {
+        background-color: rgba(179, 140, 1, 0.8);
+        padding: 10px;
+        display: inline-block;
+        border-radius: 10px;
+        border: 2px solid rgb(255, 255, 0);
+        margin-top: 50px;
+        margin-bottom: 20px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: large;
+    }
+
+    .route-info {
+        margin-bottom: 10px;
+        font-size: x-large;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        font-size: large;
+    }
+
+    .button-container button {
+        background-color: rgba(179, 140, 1);
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: large;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    h2 {
+        font-family: 'GFS Neohellenic', sans-serif;
+        text-align: left;
+        color: white;
+        font-size: 40px;
+        margin-left: 10px;
+        margin-top: 80px;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .back-button {
+        position: absolute;
+        top: 80px;
+        left: 10px;
+        margin: 0;
+        z-index: 1;
+        margin-top: 850px;
+        background-color: rgba(179, 140, 1);
+        margin-left: 5px;
+        padding: 7.5px 15px;
+        /* Increase the padding */
+        font-size: 20px;
+        /* Increase the font size */
+    }
+
+    .new-route-container {
+        background-color: rgba(179, 140, 1, 0.8);
+        padding: 20px;
+        /* Add padding to create space */
+        display: inline-block;
+        border-radius: 10px;
+        border: 2px solid rgb(255, 255, 0);
+        margin-bottom: 20px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: x-large;
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 780px) and (max-width: 1300px) {
+    h2 {
+        font-family: 'GFS Neohellenic', sans-serif;
+        text-align: left;
+        color: white;
+        font-size: 40px;
+        margin-left: 10px;
+        margin-top: 72px;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .back-button {
+        position: absolute;
+        top: 80px;
+        left: 10px;
+        margin: 0;
+        z-index: 1;
+        margin-top: 75px;
+        background-color: rgba(179, 140, 1);
+        margin-left: 15px;
+        padding: 7.5px 15px;
+        /* Increase the padding */
+        font-size: 20px;
+        /* Increase the font size */
+    }
 }

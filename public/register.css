@@ -138,3 +138,16 @@ body {
         font-size: 14px;
     }
 }
+
+@media (max-width: 768px) {
+    body {
+        background-image: url("/imgs/loginBackground.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        /* Added min-height to fill the viewport height */
+    }
+}

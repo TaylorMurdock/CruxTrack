@@ -32,16 +32,17 @@
         </p>
         <p class="route-info">Ticks: <%= route.ticks %>
         </p>
+        <div class="button-container">
+            <form action="/mycruxtrack/route/<%= route._id %>/edit" method="GET">
+                <button class="edit-button" type="submit">Edit Route</button>
+            </form>
+            <form action="/mycruxtrack/route/<%= route._id %>?_method=DELETE" method="POST">
+                <button class="delete-button" type="submit">Delete Route</button>
+            </form>
+        </div>
     </div>
 
-    <div class="button-container">
-        <form action="/mycruxtrack/route/<%= route._id %>/edit" method="GET">
-            <button class="edit-button" type="submit">Edit Route</button>
-        </form>
-        <form action="/mycruxtrack/route/<%= route._id %>?_method=DELETE" method="POST">
-            <button class="delete-button" type="submit">Delete Route</button>
-        </form>
-    </div>
+
     <form action="/mycruxtrack/myroutes" method="GET">
         <button class="back-button" type="submit">Back to Routes</button>
     </form>
