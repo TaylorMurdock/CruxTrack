@@ -37,20 +37,16 @@
             <% } else { %>
                 <ul class="route-list">
                     <% routes.forEach((route)=> { %>
-                        <li>
-                            <a href="/mycruxtrack/route/<%= route._id %>">
+                        <li><span class="bullet-point"></span><a href="/mycruxtrack/route/<%= route._id %>">
                                 <%= route.name %>
-                            </a>
-                        </li>
+                            </a></li>
                         <% }) %>
                 </ul>
                 <% } %>
 
 
     </div>
-    <button onclick="location.href='/mycruxtrack/newroute'" class="add-route-button">Add New
-        Route</button>
+    <button onclick="location.href='/mycruxtrack/newroute'" class="add-route-button">Add New Route</button>
 </body>
-
 
 </html>

@@ -113,6 +113,6 @@ h2 {
 
 @media (min-width: 768px) {
     .route-container {
-        column-count: 2;
+        column-count: 4;
     }
 }

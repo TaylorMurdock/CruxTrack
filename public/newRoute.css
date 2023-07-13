@@ -73,21 +73,21 @@ h2 {
     font-size: x-large;
 }
 
-.route-edit-container .form-label {
+.new-route-container .form-label {
     margin-bottom: 10px;
     font-size: x-large;
     /* Add margin bottom to create space between labels */
 }
 
-.route-edit-container .form-input {
+.new-route-container .form-input {
     margin-bottom: 15px;
     font-size: x-large;
     /* Add margin bottom to create space between input fields */
 }
 
-.route-edit-container .update-route-button {
+.new-route-container .add-route-button {
     margin-top: 20px;
-    font-size: large;
+    font-size: x-large;
     /* Add margin top to create space above the button */
 }
 
