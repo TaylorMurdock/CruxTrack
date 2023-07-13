@@ -137,6 +137,7 @@ h2 {
     /* Adjusted font size */
 }
 
+/* mobile */
 @media (max-width: 425px) {
     .register-title {
         font-size: 30px;
@@ -189,6 +190,8 @@ h2 {
     }
 }
 
+
+/* tablets */
 @media (min-width: 768px) {
     .register-title {
         font-size: 30px;
@@ -251,7 +254,8 @@ h2 {
     }
 }
 
-@media (min-width: 1024px) {
+/* laptop */
+@media (min-width: 1400px) {
     .register-title {
         font-size: 30px;
         margin-top: 10px;
@@ -276,20 +280,20 @@ h2 {
     .add-route-button {
         position: absolute;
         top: 40px;
-        /* Adjusted position */
+
         left: 5px;
-        /* Adjusted position */
+
         margin: 0;
         z-index: 1;
         margin-top: 50px;
-        /* Adjusted margin */
+
         background-color: rgba(179, 140, 1);
         margin-left: 10px;
-        /* Adjusted margin */
+
         padding: 5px 10px;
-        /* Adjusted padding */
+
         font-size: 14px;
-        /* Adjusted font size */
+
     }
 
     .route-container {
@@ -309,6 +313,6 @@ h2 {
     }
 
     .route-list li a {
-        font-size: 40px;
+        font-size: 30px;
     }
 }
