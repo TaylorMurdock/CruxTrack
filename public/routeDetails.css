@@ -20,10 +20,12 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: x-large;
 }
 
 .route-info {
     margin-bottom: 10px;
+    font-size: x-large;
 }
 
 .user-info {
@@ -33,6 +35,7 @@ body {
     right: 10px;
     color: white;
     margin-right: 10px;
+    font-size: x-large;
 }
 
 .logout-button {
@@ -63,10 +66,11 @@ h2 {
 
 .button-container {
     text-align: center;
-    margin-top: 24%;
+    margin-top: 28%;
     display: flex;
     justify-content: center;
     gap: 10px;
+    font-size: x-large;
 }
 
 .button-container button {
@@ -76,6 +80,7 @@ h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: x-large;
 }
 
 .button-container button:hover {
@@ -95,4 +100,8 @@ h2 {
     /* Increase the padding */
     font-size: 20px;
     /* Increase the font size */
+}
+
+.label {
+    text-decoration: underline;
 }

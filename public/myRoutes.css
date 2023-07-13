@@ -36,11 +36,13 @@ h2 {
     right: 10px;
     color: white;
     margin-right: 10px;
+    font-size: larger;
 }
 
 .logout-button {
     margin-bottom: 5px;
     display: block;
+    font-size: larger;
 }
 
 .delete-account-button {
@@ -80,6 +82,9 @@ h2 {
     transform: translate(-50%, -50%);
     width: fit-content;
     margin: 0 auto;
+    font-size: larger;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
 }
 
 .route-list {
@@ -87,12 +92,14 @@ h2 {
     padding: 0;
     text-align: center;
     display: block;
+    font-size: larger;
 }
 
 .route-list li {
     margin-bottom: 10px;
     text-align: center;
     display: block;
+    font-size: larger;
 }
 
 .route-list li a {
@@ -101,6 +108,7 @@ h2 {
     font-size: larger;
     text-align: center;
     display: block;
+    font-size: larger;
 }
 
 @media (min-width: 768px) {

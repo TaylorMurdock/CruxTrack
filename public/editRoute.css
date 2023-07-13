@@ -36,11 +36,24 @@ h2 {
     right: 10px;
     color: white;
     margin-right: 10px;
+    font-size: larger;
 }
 
 .logout-button {
     margin-bottom: 5px;
     display: block;
+}
+
+.update-route-button {
+    background-color: rgba(179, 140, 1);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: x-large;
+    border: 2px solid black;
+    /* Add black border */
 }
 
 .route-edit-container {
@@ -56,20 +69,24 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: x-large;
 }
 
 .route-edit-container .form-label {
     margin-bottom: 10px;
+    font-size: x-large;
     /* Add margin bottom to create space between labels */
 }
 
 .route-edit-container .form-input {
     margin-bottom: 15px;
+    font-size: x-large;
     /* Add margin bottom to create space between input fields */
 }
 
 .route-edit-container .update-route-button {
     margin-top: 15px;
+    font-size: x-large;
     /* Add margin top to create space above the button */
 }
 
