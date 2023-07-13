@@ -7,30 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CruxTrack Login</title>
     <link rel="stylesheet" href="/login.css">
-
 </head>
 
 <body>
     <h1 class="login-title">CruxTrack</h1>
-    <% if (error) { %>
-        <p class="error-message">Error: <%= error %>
-        </p>
-        <% } %>
+    <div class="error-container">
+        <% if (error) { %>
+            <p class="error-message">Error: <%= error %>
+            </p>
+            <% } %>
+    </div>
 
-            <form action="/login" method="POST" class="login-form">
-                <label for="username" class="form-label">Username:</label>
-                <input type="text" id="username" name="username" required class="form-input"><br>
+    <form action="/login" method="POST" class="login-form">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" id="username" name="username" required class="form-input"><br>
 
-                <label for="password" class="form-label">Password:</label>
-                <input type="password" id="password" name="password" required class="form-input"><br>
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" id="password" name="password" required class="form-input"><br>
 
-                <button type="submit" class="login-button">Login</button>
+        <button type="submit" class="login-button">Login</button>
 
-                <div class="register-container">
-                    <p>Don't have an account? <a href="/register" class="register-link">Register</a></p>
-                </div>
-
-            </form>
+        <div class="register-container">
+            <p>Don't have an account? <a href="/register" class="register-link">Register</a></p>
+        </div>
+    </form>
 </body>
 
 </html>
