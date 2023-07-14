@@ -1,4 +1,5 @@
 body {
+    /* Set background image */
     background-image: url("/imgs/routesBackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -9,6 +10,7 @@ body {
 }
 
 .route-info-container {
+    /* Style container for route information */
     background-color: rgba(179, 140, 1, 0.8);
     padding: 10px;
     display: inline-block;
@@ -24,11 +26,13 @@ body {
 }
 
 .route-info {
+    /* Style route information within the container */
     margin-bottom: 10px;
     font-size: xx-large;
 }
 
 .user-info {
+    /* Style user information section */
     position: absolute;
     text-align: center;
     bottom: 30px;
@@ -39,11 +43,13 @@ body {
 }
 
 .logout-button {
+    /* Style logout button within user information section */
     margin-bottom: 5px;
     display: block;
 }
 
 h1 {
+    /* Style heading level 1 */
     font-family: 'GFS Neohellenic', sans-serif;
     text-align: center;
     color: white;
@@ -53,6 +59,7 @@ h1 {
 }
 
 h2 {
+    /* Style heading level 2 */
     font-family: 'GFS Neohellenic', sans-serif;
     text-align: left;
     color: white;
@@ -65,6 +72,7 @@ h2 {
 }
 
 .button-container {
+    /* Style container for buttons */
     text-align: center;
     margin-top: 10%;
     display: flex;
@@ -74,6 +82,7 @@ h2 {
 }
 
 .button-container button {
+    /* Style buttons within the container */
     background-color: rgba(179, 140, 1);
     color: white;
     padding: 5px 10px;
@@ -84,10 +93,12 @@ h2 {
 }
 
 .button-container button:hover {
+    /* Style hover effect for buttons */
     opacity: 0.8;
 }
 
 .back-button {
+    /* Style back button */
     position: absolute;
     top: 80px;
     left: 10px;
@@ -103,15 +114,20 @@ h2 {
 }
 
 .label {
+    /* Style labels */
     text-decoration: underline;
 }
 
 @media (max-width: 425px) {
+
+    /* Media query for screen width up to 425px */
     h2 {
+        /* Hide h2 element */
         display: none;
     }
 
     .back-button {
+        /* Style back button for small screens */
         position: absolute;
         top: 80px;
         left: 10px;
@@ -127,10 +143,12 @@ h2 {
     }
 
     .user-info {
+        /* Hide user information section */
         display: none;
     }
 
     .route-info-container {
+        /* Style container for route information on small screens */
         background-color: rgba(179, 140, 1, 0.8);
         padding: 10px;
         display: inline-block;
@@ -147,11 +165,13 @@ h2 {
     }
 
     .route-info {
+        /* Style route information on small screens */
         margin-bottom: 10px;
         font-size: x-large;
     }
 
     .button-container {
+        /* Style container for buttons on small screens */
         text-align: center;
         margin-top: 10%;
         display: flex;
@@ -161,6 +181,7 @@ h2 {
     }
 
     .button-container button {
+        /* Style buttons within the container on small screens */
         background-color: rgba(179, 140, 1);
         color: white;
         padding: 5px 10px;
@@ -172,7 +193,10 @@ h2 {
 }
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
+
+    /* Media query for screen width between 426px and 768px */
     h2 {
+        /* Style heading level 2 for medium screens */
         font-family: 'GFS Neohellenic', sans-serif;
         text-align: left;
         color: white;
@@ -185,6 +209,7 @@ h2 {
     }
 
     .back-button {
+        /* Style back button for medium screens */
         position: absolute;
         top: 80px;
         left: 10px;
@@ -200,6 +225,7 @@ h2 {
     }
 
     .new-route-container {
+        /* Style container for new route on medium screens */
         background-color: rgba(179, 140, 1, 0.8);
         padding: 20px;
         /* Add padding to create space */
@@ -218,7 +244,10 @@ h2 {
 }
 
 @media screen and (min-width: 780px) and (max-width: 1300px) {
+
+    /* Media query for screen width between 780px and 1300px */
     h2 {
+        /* Style heading level 2 for large screens */
         font-family: 'GFS Neohellenic', sans-serif;
         text-align: left;
         color: white;
@@ -231,6 +260,7 @@ h2 {
     }
 
     .back-button {
+        /* Style back button for large screens */
         position: absolute;
         top: 80px;
         left: 10px;

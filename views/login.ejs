@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CruxTrack Login</title>
-    <link rel="stylesheet" href="/login.css">
+    <link rel="stylesheet" href="/login.css"> <!-- Include external CSS file -->
 </head>
 
 <body>
-    <h1 class="login-title">CruxTrack</h1>
+    <h1 class="login-title">CruxTrack</h1> <!-- Heading for the page title -->
     <div class="error-container">
-        <% if (error) { %>
-            <p class="error-message">Error: <%= error %>
+        <% if (error) { %> <!-- If an error exists -->
+            <p class="error-message">Error: <%= error %> <!-- Display the error message using EJS template syntax -->
             </p>
             <% } %>
     </div>
@@ -21,14 +21,18 @@
     <form action="/login" method="POST" class="login-form">
         <label for="username" class="form-label">Username:</label>
         <input type="text" id="username" name="username" required class="form-input"><br>
+        <!-- Input field for entering the username -->
 
         <label for="password" class="form-label">Password:</label>
         <input type="password" id="password" name="password" required class="form-input"><br>
+        <!-- Input field for entering the password -->
 
         <button type="submit" class="login-button">Login</button>
+        <!-- Button to submit the login form -->
 
         <div class="register-container">
             <p>Don't have an account? <a href="/register" class="register-link">Register</a></p>
+            <!-- Link to navigate to the registration page -->
         </div>
     </form>
 </body>

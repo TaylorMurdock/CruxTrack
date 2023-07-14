@@ -139,6 +139,8 @@ h2 {
 
 /* mobile */
 @media (max-width: 425px) {
+
+    /* Adjust styles for mobile devices */
     .register-title {
         font-size: 30px;
         margin-top: 10px;
@@ -162,7 +164,7 @@ h2 {
     }
 
     .add-route-button {
-        top: 35px;
+        top: 3px;
         margin-top: 100px;
         margin-left: 7px;
         padding: 3px 7px;
@@ -193,6 +195,8 @@ h2 {
 
 /* tablets */
 @media (min-width: 768px) {
+
+    /* Adjust styles for tablets */
     .register-title {
         font-size: 30px;
         margin-top: 10px;
@@ -256,6 +260,8 @@ h2 {
 
 /* laptop */
 @media (min-width: 1400px) {
+
+    /* Adjust styles for laptops */
     .register-title {
         font-size: 30px;
         margin-top: 10px;

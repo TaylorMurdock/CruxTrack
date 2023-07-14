@@ -40,6 +40,7 @@ router.get("/route/:id", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+
 // GET /mycruxtrack/route/:id/edit - Edit Route Page
 router.get("/route/:id/edit", async (req, res) => {
   try {
@@ -59,6 +60,7 @@ router.get("/route/:id/edit", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+
 // POST /mycruxtrack/route/:id - Update Route
 router.post("/route/:id", async (req, res) => {
   try {

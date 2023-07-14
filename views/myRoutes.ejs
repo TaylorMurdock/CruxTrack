@@ -13,40 +13,44 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="/myRoutes.css">
+    <link rel="stylesheet" href="/myRoutes.css"> <!-- Include external CSS file -->
 </head>
 
 <body>
-    <h1 class="cruxtrack-title">CruxTrack</h1>
+    <h1 class="cruxtrack-title">CruxTrack</h1> <!-- Heading for the page title -->
     <h2 class="my-routes-title">Routes for: <%= user.username %>
+            <!-- Display the username of the logged-in user using EJS template syntax -->
     </h2>
 
     <div class="user-info">
         <p class="logged-in-as">Logged In: <%= user.username %>
+                <!-- Display the username of the logged-in user using EJS template syntax -->
         </p>
-        <%- include('logoutButton') %>
+        <%- include('logoutButton') %> <!-- Include a partial template named 'logoutButton' -->
+
             <form id="deleteAccountForm" action="/deleteaccount" method="POST">
+                <!-- Form for deleting the user account -->
                 <button type="button" onclick="confirmDeleteAccount()" class="delete-account-button">Delete
-                    Account</button>
+                    Account</button> <!-- Button to trigger the account deletion confirmation dialog -->
             </form>
     </div>
 
     <div class="route-container">
-        <% if (routes.length===0) { %>
-            <p>No routes found.</p>
-            <% } else { %>
-                <ul class="route-list">
-                    <% routes.forEach((route)=> { %>
+        <% if (routes.length===0) { %> <!-- If no routes found -->
+            <p>No routes found.</p> <!-- Display a message indicating no routes found -->
+            <% } else { %> <!-- If routes exist -->
+                <ul class="route-list"> <!-- Create an unordered list to display the routes -->
+                    <% routes.forEach((route)=> { %> <!-- Loop through each route -->
                         <li><span class="bullet-point"></span><a href="/mycruxtrack/route/<%= route._id %>">
                                 <%= route.name %>
-                            </a></li>
+                            </a></li> <!-- Display each route name as a clickable link -->
                         <% }) %>
                 </ul>
                 <% } %>
-
-
     </div>
+
     <button onclick="location.href='/mycruxtrack/newroute'" class="add-route-button">Add New Route</button>
+    <!-- Button to navigate to the page for adding a new route -->
 </body>
 
 </html>

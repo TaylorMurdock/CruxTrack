@@ -1,6 +1,5 @@
-/* register.css */
-
 body {
+    /* Set background image */
     background-image: url("/imgs/loginBackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -10,6 +9,7 @@ body {
 }
 
 .register-title {
+    /* Style register title */
     font-family: 'GFS Neohellenic', sans-serif;
     text-align: center;
     color: #3a493d;
@@ -19,11 +19,13 @@ body {
 }
 
 .error-message {
+    /* Style error message */
     color: red;
     margin-bottom: 10px;
 }
 
 .register-form {
+    /* Style register form */
     max-width: 300px;
     margin: 0 auto;
     padding: 20px;
@@ -33,6 +35,7 @@ body {
 }
 
 .form-label {
+    /* Style form label */
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
@@ -40,6 +43,7 @@ body {
 }
 
 .form-input {
+    /* Style form input */
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 20px;
@@ -48,6 +52,7 @@ body {
 }
 
 .register-button {
+    /* Style register button */
     width: 100%;
     padding: 10px;
     background-color: #4caf50;
@@ -58,31 +63,37 @@ body {
 }
 
 .register-button:hover {
+    /* Style hover effect for register button */
     background-color: #45a049;
 }
 
 .register-link {
+    /* Style register link */
     text-align: center;
     color: #4caf50;
 }
 
 .login-container {
+    /* Style login container */
     text-align: center;
     margin-top: 20px;
 }
 
 .login-link {
+    /* Style login link */
     color: #4caf50;
     text-decoration: none;
 }
 
 .login-link:hover {
+    /* Style hover effect for login link */
     text-decoration: underline;
 }
 
 @media screen and (min-width: 320px) {
+
+    /* Media query for screens up to 320px width */
     body {
-        /* Styles for screens up to 320px width */
         background-size: cover;
         background-repeat: repeat;
         background-position: center top;
@@ -91,55 +102,57 @@ body {
     }
 
     .register-title {
-        /* Styles for screens up to 320px width */
+        /* Adjusted styles for screens up to 320px width */
         font-size: 40px;
         margin-top: 30px;
         margin-bottom: 60px;
     }
 
     .register-form {
-        /* Styles for screens up to 320px width */
+        /* Adjusted styles for screens up to 320px width */
         max-width: 250px;
         padding: 15px;
     }
 
     .error-message {
-        /* Styles for screens up to 320px width */
+        /* Adjusted styles for screens up to 320px width */
         font-size: 14px;
         margin-bottom: 8px;
     }
 
     .form-label {
-        /* Styles for screens up to 320px width */
+        /* Adjusted styles for screens up to 320px width */
         font-size: 14px;
         margin-bottom: 8px;
     }
 
     .form-input {
-        /* Styles for screens up to 320px width */
+        /* Adjusted styles for screens up to 320px width */
         padding: 8px;
         margin-bottom: 15px;
         font-size: 14px;
     }
 
     .register-button {
-        /* Styles for screens up to 320px width */
+        /* Adjusted styles for screens up to 320px width */
         padding: 8px;
         font-size: 14px;
     }
 
     .register-link {
-        /* Styles for screens up to 320px width */
+        /* Adjusted styles for screens up to 320px width */
         font-size: 14px;
     }
 
     .login-link {
-        /* Styles for screens up to 320px width */
+        /* Adjusted styles for screens up to 320px width */
         font-size: 14px;
     }
 }
 
 @media (max-width: 768px) {
+
+    /* Media query for screens up to 768px width */
     body {
         background-image: url("/imgs/loginBackground.jpg");
         background-size: cover;
@@ -148,6 +161,5 @@ body {
         margin: 0;
         padding: 0;
         min-height: 100vh;
-        /* Added min-height to fill the viewport height */
     }
 }

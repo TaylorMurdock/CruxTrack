@@ -6,38 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Route</title>
-    <link rel="stylesheet" href="/editRoute.css">
+    <link rel="stylesheet" href="/editRoute.css"> <!-- Include external CSS file -->
 </head>
 
 <body>
-    <h1 class="edit-route-title">CruxTrack</h1>
-    <h2>Edit Details for: <%= route.name %>
+    <h1 class="edit-route-title">CruxTrack</h1> <!-- Heading for the page title -->
+    <h2>Edit Details for: <%= route.name %> <!-- Display the name of the route using EJS template syntax -->
     </h2>
     <div class="user-info">
         <p>Logged in as: <%= user.username %>
+                <!-- Display the username of the logged-in user using EJS template syntax -->
         </p>
-        <%- include('logoutButton') %>
+        <%- include('logoutButton') %> <!-- Include a partial template named 'logoutButton' -->
     </div>
 
     <div class="route-edit-container">
         <form action="/mycruxtrack/route/<%= route._id %>" method="POST" class="edit-route-form">
             <label for="name" class="form-label">Name:</label>
             <input type="text" id="name" name="name" value="<%= route.name %>" required class="form-input"><br>
+            <!-- Input field for editing the route name with the current value pre-filled -->
 
             <label for="difficulty" class="form-label">Difficulty:</label>
             <input type="text" id="difficulty" name="difficulty" value="<%= route.difficulty %>" required
                 class="form-input"><br>
+            <!-- Input field for editing the route difficulty with the current value pre-filled -->
 
             <label for="type" class="form-label">Type:</label>
             <input type="text" id="type" name="type" value="<%= route.type %>" required class="form-input"><br>
+            <!-- Input field for editing the route type with the current value pre-filled -->
 
             <label for="location" class="form-label">Location:</label>
             <input type="text" id="location" name="location" value="<%= route.location %>" class="form-input"><br>
+            <!-- Input field for editing the route location with the current value pre-filled -->
 
             <label for="ticks" class="form-label">Ticks:</label>
             <input type="text" id="ticks" name="ticks" value="<%= route.ticks %>" required class="form-input"><br>
+            <!-- Input field for editing the route ticks (number of completed climbs) with the current value pre-filled -->
 
             <button type="submit" class="update-route-button">Update Route</button>
+            <!-- Button to submit the updated route form -->
         </form>
     </div>
 

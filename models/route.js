@@ -28,6 +28,6 @@ const routeSchema = new mongoose.Schema({
   },
 });
 
-const Route = mongoose.model("Route", routeSchema);
+const Route = mongoose.model("Route", routeSchema); // Create the Route model
 
-module.exports = Route;
+module.exports = Route; // Export the Route model for external use
